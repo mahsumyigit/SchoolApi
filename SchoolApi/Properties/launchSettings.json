@@ -12,8 +12,7 @@
     "SchoolApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7200;http://localhost:5013",
+      "applicationUrl": "http://localhost:59232",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -8,6 +8,55 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational.Design" Version="1.1.6" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.6" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Azure.Management.PostgreSQL" Version="2.0.0" />
+    <PackageReference Include="Npgsql" Version="6.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Models\" />
+    <None Remove="Models\DTOs\" />
+    <None Remove="Models\Entities\" />
+    <None Remove="Context\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.Relational" />
+    <None Remove="Microsoft.EntityFrameworkCore.Relational.Design" />
+    <None Remove="EntityFramework" />
+    <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL.Design" />
+    <None Remove="Microsoft.Azure.Management.PostgreSQL" />
+    <None Remove="Npgsql" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer.Design" />
+    <None Remove="Repositories\" />
+    <None Remove="Repositories\Base\" />
+    <None Remove="Repositories\Interface\" />
+    <None Remove="Repositories\Concretes\" />
+    <None Remove="Services\" />
+    <None Remove="Services\Concrete\" />
+    <None Remove="Services\Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Models\DTOs\" />
+    <Folder Include="Models\Entities\" />
+    <Folder Include="Context\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Base\" />
+    <Folder Include="Repositories\Interface\" />
+    <Folder Include="Repositories\Concretes\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Concrete\" />
+    <Folder Include="Services\Interface\" />
+  </ItemGroup>
 </Project>
