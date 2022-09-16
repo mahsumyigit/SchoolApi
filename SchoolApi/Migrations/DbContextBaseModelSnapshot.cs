@@ -62,12 +62,6 @@ namespace SchoolApi.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("SchoolId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("StudentId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("StudentNumber")
                         .IsRequired()
                         .HasColumnType("text");
@@ -77,8 +71,6 @@ namespace SchoolApi.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("SchoolId");
 
                     b.ToTable("Students");
                 });
@@ -103,77 +95,13 @@ namespace SchoolApi.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("SchoolId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SchoolId");
-
                     b.ToTable("Teachers");
-                });
-
-            modelBuilder.Entity("StudentTeacher", b =>
-                {
-                    b.Property<int>("StudentId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TeacherId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("StudentId", "TeacherId");
-
-                    b.HasIndex("TeacherId");
-
-                    b.ToTable("StudentTeacher");
-                });
-
-            modelBuilder.Entity("SchoolApi.Models.Entities.Student", b =>
-                {
-                    b.HasOne("SchoolApi.Models.Entities.School", "School")
-                        .WithMany("Student")
-                        .HasForeignKey("SchoolId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("School");
-                });
-
-            modelBuilder.Entity("SchoolApi.Models.Entities.Teacher", b =>
-                {
-                    b.HasOne("SchoolApi.Models.Entities.School", "School")
-                        .WithMany("Teacher")
-                        .HasForeignKey("SchoolId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("School");
-                });
-
-            modelBuilder.Entity("StudentTeacher", b =>
-                {
-                    b.HasOne("SchoolApi.Models.Entities.Student", null)
-                        .WithMany()
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SchoolApi.Models.Entities.Teacher", null)
-                        .WithMany()
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("SchoolApi.Models.Entities.School", b =>
-                {
-                    b.Navigation("Student");
-
-                    b.Navigation("Teacher");
                 });
 #pragma warning restore 612, 618
         }

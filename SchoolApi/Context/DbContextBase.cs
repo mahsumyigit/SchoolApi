@@ -32,7 +32,7 @@ namespace SchoolApi.Context
                 entity.Property(e => e.Surname).IsRequired();
                 entity.Property(e => e.StudentNumber).IsRequired();
                 entity.Property(e => e.Class).IsRequired();
-                entity.HasOne(e => e.School).WithMany(e => e!.Students).HasForeignKey(e => e.SchoolId);
+                //entity.HasOne(e => e.School).WithMany(e => e!.Students).HasForeignKey(e => e.SchoolId);
 
             });
             modelBuilder.Entity<Teacher>(entity =>
@@ -42,8 +42,8 @@ namespace SchoolApi.Context
                 entity.Property(e => e.Surname);
                 entity.Property(e => e.Department);
                 entity.Property(e => e.Description);
-                entity.HasMany(e => e.Students).WithMany(e => e.Teachers).UsingEntity(j => j.ToTable("teacher_student"));
-                entity.HasOne(e => e.School).WithMany(e => e!.Teachers).HasForeignKey(e => e.SchoolId);
+                //entity.HasMany(e => e.Students).WithMany(e => e.Teachers).UsingEntity(j => j.ToTable("teacher_student"));
+                //entity.HasOne(e => e.School).WithMany(e => e!.Teachers).HasForeignKey(e => e.SchoolId);
 
             });
             modelBuilder.Entity<School>(entity =>
